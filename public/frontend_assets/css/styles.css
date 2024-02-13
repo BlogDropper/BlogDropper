@@ -133,7 +133,7 @@ section{
         font-size: smaller;
     }
     .custom-card-img{
-        height: 12rem;
+        height: 15rem;
     }
 }
 
@@ -252,7 +252,6 @@ footer {
     background-color: #6c757d;
     background-size: cover;
     background-attachment: scroll;
-    background-image: url('https://images.unsplash.com/photo-1500964757637-c85e8a162699?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YmVhdXRpZnVsJTIwbGFuZHNjYXBlfGVufDB8fDB8fHww');
   }
 
   header.masthead::before {
@@ -283,26 +282,21 @@ footer {
     font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
-  @media (min-width: 992px) {
-    header.masthead {
-      padding-bottom: 12rem;
-    }
-    header.masthead .page-heading h1, header.masthead .page-heading .h1,
-    header.masthead .site-heading h1,
-    header.masthead .site-heading .h1 {
-      font-size: 5rem;
-    }
-    header.masthead .post-heading h1, header.masthead .post-heading .h1 {
-      font-size: 3.5rem;
-    }
-    header.masthead .post-heading .subheading {
-      font-size: 1.875rem;
-    }
-  }
+   @media (min-width: 992px) {
+     header.masthead {
+       padding-bottom: 12rem;
+     }
+   }
+
+   @media (max-width: 768px) {
+     header.masthead {
+       padding-top: 7rem; /* Adjust the value as needed */
+     }
+   }
 
     #backgroundimage {
     width: 100%;
-    height: 35.5rem;
+    height: 37.5rem;
     background-size: 100% 100%;
     background-repeat: no-repeat;
     position: relative;
@@ -322,7 +316,7 @@ footer {
     }
 
     .title{
-    margin-top: 11.5rem;
+    margin-top: 12rem;
     font-weight: bolder;
     font-size: 1.75rem;
     }

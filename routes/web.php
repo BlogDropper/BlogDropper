@@ -73,12 +73,13 @@ Route::get('/showmoreposts','App\Http\Controllers\FrontendController@showmorepos
 Route::get('/showmorepops','App\Http\Controllers\FrontendController@showmorepops')->name('frontend.showmorepops');
 
 //For WebUser Authentication Frontend
-Route::get('/singupwebuser','App\Http\Controllers\WebuserController@signup')->middleware('webauth')->name('frontend.signup');
+Route::get('/signupwebuser','App\Http\Controllers\WebuserController@signup')->middleware('webauth')->name('frontend.signup');
 Route::get('/webloginuser','App\Http\Controllers\WebuserController@login')->middleware('webauth')->name('frontend.login');
 Route::post('/weblogin', 'App\Http\Controllers\WebuserController@signin')->middleware('webauth')->name('frontend.weblogin');
 Route::post('/newwebloginuser','App\Http\Controllers\WebuserController@new')->middleware('webauth')->name('frontend.newwebuser');
 Route::post('/logoutwebuser','App\Http\Controllers\WebuserController@logout')->name('frontend.userlogout');
 
 //For Comments Frontend
-Route::post('/commentstore','App\Http\Controllers\CommentsController@store')->name('comments.store');
-Route::post('/nestedcommentstore','App\Http\Controllers\CommentsController@nestedstore')->name('nestedcomments.store');
+Route::post('/commentstore','App\Http\Controllers\CommentsController@store')->middleware('webauthaccess')->name('comments.store');
+Route::post('/nestedcommentstore','App\Http\Controllers\CommentsController@nestedstore')->middleware('webauthaccess')->name('nestedcomments.store');
+Route::get('/comments/deletecommentbywebuser/{id}', 'App\Http\Controllers\CommentsController@deletecommentbywebuser')->middleware('webauthaccess')->name('deletecommentbywebuser.delete');

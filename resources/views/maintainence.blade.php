@@ -11,7 +11,6 @@ body {
     box-sizing: border-box;
 }
 .maintenance {
-    background-image: url(https://images.unsplash.com/photo-1500964757637-c85e8a162699?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YmVhdXRpZnVsJTIwbGFuZHNjYXBlfGVufDB8fDB8fHww);
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: scroll;
@@ -85,9 +84,8 @@ body {
 </style>
 <body>
 
-    <div class="maintenance">
+    <div class="maintenance" style="background-image: url('{{ asset('frontend_assets/assets/img/md.jpg') }}');">
         <div class="maintenance_contain">
-          <img src="https://cdn-icons-png.flaticon.com/128/2942/2942499.png" width="200" height="200" alt="maintenance">
           <div class="pp-infobox-title-wrapper">
                 <h3 class="pp-infobox-title" style="color: whitesmoke">This website is currently under maintenance!</h3>
             </div>

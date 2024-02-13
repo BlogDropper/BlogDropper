@@ -2,7 +2,7 @@
 @section('body')
 
         <!-- Page Image -->
-        <header class="masthead">
+        <header class="masthead" style="background-image: url('{{ asset('frontend_assets/assets/img/md.jpg') }}');">
             <div class="container position-relative px-4 px-lg-5">
                 <div class="row justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">

@@ -13,7 +13,7 @@ class CommentsController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'body' => 'required|max:1000', // Example validation rules for the body field
+            'body' => 'required|max:1500', // Example validation rules for the body field
         ]);
         $comment = new Comments;
         $comment->user_id = $request['user_id'] = Auth::guard('webuser')->user()->id;
@@ -25,7 +25,7 @@ class CommentsController extends Controller
 
     public function nestedstore(Request $request){
         $request->validate([
-            'body' => 'required|max:1000', // Example validation rules for the body field
+            'body' => 'required|max:1500', // Example validation rules for the body field
         ]);
         $comment = new Comments;
         $comment->user_id = $request['user_id'] = Auth::guard('webuser')->user()->id;
@@ -34,6 +34,23 @@ class CommentsController extends Controller
         $comment->body = $request['body'];
         $comment->save();
         return back();
+    }
+
+    public function deletecommentbywebuser(Request $request, $id){
+        $comment = Comments::find($id);
+        $this->deleteCommentsRecursively($comment->replies);
+        $comment -> delete();
+        return redirect()->back();
+    }
+
+    protected function deleteCommentsRecursively($comments)
+    {
+        foreach ($comments as $comment) {
+            // Delete nested comments first
+            $this->deleteCommentsRecursively($comment->replies);
+            // Then delete the current comment
+            $comment->delete();
+        }
     }
 
     //For Backend

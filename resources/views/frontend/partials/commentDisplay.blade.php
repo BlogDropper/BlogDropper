@@ -9,6 +9,9 @@
                     {{ $comment->user->name }}
                     <span class="small">- {{ \Carbon\Carbon::parse($comment->created_at)->diffForHumans() }}</span>
                   </p>
+                  @if(Auth::guard('webuser')->check() && Auth::guard('webuser')->user()->id == $comment->user->id)
+                      <a href="{{url('/comments/deletecommentbywebuser/'.$comment->id)}}" class="text-danger m-3">Delete</a>
+                  @endif
                 </div>
                 <p class="small mb-0 mx-2">
                     {{ $comment->body }}

@@ -53,8 +53,7 @@
                     <div class="row">
                         <div class="col-lg-12 col-md-12 mt-4 pt-2">
                             <div class="card work-desk rounded border-0 shadow-lg overflow-hidden">
-                                <img src="https://papers.co/wallpaper/papers.co-ha05-daft-punk-cute-music-face-34-iphone6-plus-wallpaper.jpg" class="img-fluid" alt="Image" />
-                                <div class="img-overlay bg-dark"></div>
+                                <img src="{{ asset('frontend_assets/assets/img/martin.jpg') }}" class="img-fluid" alt="Image description" />                                <div class="img-overlay bg-dark"></div>
                             </div>
                         </div>
                         <!--end col-->
@@ -67,7 +66,7 @@
                     <div class="row">
                         <div class="col-lg-12 col-md-12">
                             <div class="card work-desk rounded border-0 shadow-lg overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1517941823-815bea90d291?w=420&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXRodW1ibmFpbHx8MTM2ODg3MTN8fGVufDB8fHx8fA%3D%3D" class="img-fluid" alt="Image" />
+                                <img src="{{ asset('frontend_assets/assets/img/sunny.jpg') }}" class="img-fluid" alt="Image description" />                                <div class="img-overlay bg-dark"></div>
                                 <div class="img-overlay bg-dark"></div>
                             </div>
                         </div>
@@ -75,7 +74,7 @@
 
                         <div class="col-lg-12 col-md-12 mt-4 pt-2">
                             <div class="card work-desk rounded border-0 shadow-lg overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1452698325353-b90e60289e87?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MnwyMjgxODA2fHxlbnwwfHx8fHw%3D" class="img-fluid" alt="Image" />
+                                <img src="{{ asset('frontend_assets/assets/img/band.jpg') }}" class="img-fluid" alt="Image description" />                                <div class="img-overlay bg-dark"></div>
                                 <div class="img-overlay bg-dark"></div>
                             </div>
                         </div>

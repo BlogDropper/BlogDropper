@@ -39,7 +39,7 @@
                         @if(!request()->routeIs('frontend.showcat'))
                         <li class="nav-item">
                             <form action="{{ route('frontend.search') }}" method="GET" class="d-flex nav-link px-lg-1 py-3 py-lg-3">
-                                <input name="search" class="form-control" type="search" placeholder="Search for a blog or blogger" aria-label="Search">
+                                <input name="search" class="form-control" type="search" placeholder="Blog Search Engine" aria-label="Search">
                                 <button class="btn" type="submit">
                                     <svg width="18" height="18" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                                         <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
