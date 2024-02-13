@@ -31,7 +31,7 @@ class WebuserController extends Controller
         $email = $request->input('email');
         $password = $request->input('password');
         if (Auth::guard('webuser')->attempt($request->only('email', 'password'))) {
-            return redirect('index');
+            return redirect('/');
         } else {
             return redirect()->back()->withErrors(['email' => 'Invalid email credentials', 'password' => 'Invalid password credentials']);
         }
@@ -55,7 +55,7 @@ class WebuserController extends Controller
         $webuser -> password = Hash::make($password);
         $webuser -> save();
         if (Auth::guard('webuser')->attempt($request->only('email', 'password'))) {
-            return redirect('index');
+            return redirect('/');
         } else {
             return redirect()->back()->withErrors(['name' => 'Invalid credentials', 'email' => 'Invalid credentials', 'password' => 'Invalid credentials']);
         }
@@ -63,7 +63,7 @@ class WebuserController extends Controller
 
     public function logout(){
         Auth::guard('webuser')->logout();
-        return redirect('/index');
+        return redirect('/');
     }
 
     //For Backend

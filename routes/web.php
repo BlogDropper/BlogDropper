@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/index', function () {
     return view('welcome');
 });
 
@@ -62,7 +62,7 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 //Frontend Section
-Route::get('/index', 'App\Http\Controllers\FrontendController@index')->name('frontend.index'); //home page
+Route::get('/', 'App\Http\Controllers\FrontendController@index')->name('frontend.index'); //home page
 Route::get('/about', 'App\Http\Controllers\FrontendController@about')->name('frontend.about'); //about page
 Route::get('/blog/{id}','App\Http\Controllers\FrontendController@post')->name('frontend.post'); //indivisual blog page
 Route::get('/blog/category/{category}','App\Http\Controllers\FrontendController@showcat')->name('frontend.showcat'); //category page
