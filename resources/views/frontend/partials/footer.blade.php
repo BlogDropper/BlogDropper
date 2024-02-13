@@ -33,7 +33,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-5 col-lg-3 mb-4">
+                {{-- <div class="col-md-5 col-lg-3 mb-4">
                     <h5 class="text-center fs-5">Subscribe to our Blog.</h5>
                     <div>
                         <form class="form-row d-flex flex-row mb-2 p-1">
@@ -41,6 +41,12 @@
                             <button class="btn btn-secondary" type="submit">Subscribe</button>
                         </form>
                         <p class="fs-sm text-opacity-75 text-center">I agree to receive newsletters.</p>
+                    </div>
+                </div> --}}
+                <div class="col-md-5 col-lg-3 mb-4">
+                    <h5 class="text-center fs-5">For any enquiries ,</h5>
+                    <div>
+                        <p class="fs-sm text-opacity-75 text-center">blogdropper8@gmail.com</p>
                     </div>
                 </div>
             </div>
