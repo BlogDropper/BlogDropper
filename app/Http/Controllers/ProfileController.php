@@ -22,6 +22,11 @@ class ProfileController extends Controller
 
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'name' => 'required|max:255',
+            'email' => 'required|email|max:255|unique:users,email,' . $id,
+            'password' => 'nullable|min:6', // Assuming you want to allow null passwords or require at least 8 characters
+        ]);
         $user = User::find($id);
         $user -> name = $request['name'];
         $user -> email = $request['email'];

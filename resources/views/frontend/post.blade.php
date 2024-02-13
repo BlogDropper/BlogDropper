@@ -86,6 +86,15 @@
                             <form method="post" action="{{ route('comments.store') }}">
                                 @csrf
                                 <div class="form-group">
+                                    @if ($errors->any())
+                                        <div class="text-danger text-center">
+                                            <ul class="list-unstyled">
+                                                @foreach ($errors->all() as $error)
+                                                    <li class="">{{ $error }}</li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    @endif
                                     <textarea class="form-control" name="body" rows="6" required></textarea>
                                     <input type="hidden" name="post_id" value="{{ $posts->id }}"/>
                                 </div>

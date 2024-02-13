@@ -35,6 +35,15 @@
                             <h3 class="mx-2">{{ __('Edit Profile') }}</h3>
                         </div>
                     </div>
+                    @if ($errors->any())
+                        <div class="text-danger mx-4">
+                            <ul class="list-unstyled">
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     <div class="card-body">
                         <form action="{{ url('superadminupdate/update/' . Auth::user()->id) }}" method="POST">
                             @csrf

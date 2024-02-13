@@ -32,9 +32,7 @@
                             @foreach ($users as $u)
                                 <tr>
                                     <td>{{$u->name}}</td>
-                                    <td>
-                                    {{$u->email}}
-                                    </td>
+                                    <td>{{$u->email}}</td>
                                     <td>{{$u->created_at}}</td>
                                 </tr>
                             @endforeach

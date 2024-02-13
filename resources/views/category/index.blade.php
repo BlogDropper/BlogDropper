@@ -49,6 +49,15 @@
                   <th class="text-center">Actions</th>
                 </tr>
               </thead>
+              @if ($errors->any())
+                <div class="text-danger mx-4">
+                    <ul class="list-unstyled">
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+              @endif
               <tbody class="list">
                 @foreach ($category as $c)
                 <tr>

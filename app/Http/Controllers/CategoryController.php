@@ -13,6 +13,11 @@ class CategoryController extends Controller
     }
 
     public function store(Request $request){
+        $request->validate([
+            'name' => 'required|unique:categories|max:255',
+            'description' => 'required|max:1500',
+            'status' => 'required',
+        ]);
         $category = new Category;
         $category->name = $request['name'];
         $category->description = $request['description'];

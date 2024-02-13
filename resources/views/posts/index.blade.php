@@ -35,7 +35,7 @@
                             </div>
                         </div>
                     </form>
-                    <a href="#" class="btn btn-lg btn-neutral" id="newPostButton">Add a new blog post</a>
+                <a href="#" class="btn btn-lg btn-neutral" id="newPostButton">Add a new blog post</a>
             </div>
           </div>
         </div>
@@ -65,6 +65,15 @@
                   <th class="text-center">Actions</th>
                 </tr>
               </thead>
+              @if ($errors->any())
+                <div class="text-danger mx-4">
+                    <ul class="list-unstyled">
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+              @endif
               <tbody class="list">
                 @foreach ($posts as $p)
                 <tr>

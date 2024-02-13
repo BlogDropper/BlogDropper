@@ -23,8 +23,18 @@ class PostController extends Controller
         return view('posts.index', compact('posts', 'category'));
     }
 
-
     public function store(Request $request){
+        $request->validate([
+            'title' => 'required|max:64',
+            'category' => 'required|max:123',
+            'description' => 'required|max:40',
+            'status' => 'required',
+            'author' => 'required',
+            'date' => 'required',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg',
+            'banner' => 'image|mimes:jpeg,png,jpg,gif,svg',
+            'multipleimages.*' => 'image|mimes:jpeg,png,jpg,gif,svg',
+        ]);
         $post = new Post;
         $post->title = $request->input('title');
         $post->category = $request->input('category');

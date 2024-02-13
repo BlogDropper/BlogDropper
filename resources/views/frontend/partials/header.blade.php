@@ -87,13 +87,11 @@
                     </div>
                     <div class="modal-body">
                             <div class="form-group">
-                                <p>Name : {{ Auth::guard('webuser')->user()->name }}</p>
                                 <p>Email : {{ Auth::guard('webuser')->user()->email }}</p>
+                                <p>Username : {{ Auth::guard('webuser')->user()->name }}</p>
                             </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-
                         <form id="logoutForm" action="{{ route('frontend.userlogout') }}" method="POST">
                             @csrf
                             <button type="submit" class="btn btn-danger">Logout</button>
