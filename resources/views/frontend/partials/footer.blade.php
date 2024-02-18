@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col-md-7 col-lg-9 pe-xxl-10">
                     <div class="row mb-4 mx-2">
-                        <div class="col-6 col-md-3 col-lg-4">
+                        <div class="col-4 col-md-3 col-lg-4 mx-3">
                             <h5 class="">
                                 @if (Auth::guard('webuser')->check())
                                 <p>Welcome, {{ Auth::guard('webuser')->user()->name }}</p>
@@ -23,7 +23,7 @@
                                 <li><a class="text-opacity-75" href="{{route('frontend.about')}}">About</a></li>
                             </ul>
                         </div>
-                        <div class="col-6 col-md-3 col-lg-4">
+                        <div class="col-4 col-md-3 col-lg-4 mx-3">
                             <h5>Categories</h5>
                             <ul class="list-unstyled">
                                 @foreach ($cat as $c)
@@ -31,6 +31,12 @@
                                 @endforeach
                             </ul>
                         </div>
+                    </div>
+                </div>
+                <div class="col-md-5 col-lg-3 mb-4">
+                    <h5 class="text-center fs-5">For any enquiries ,</h5>
+                    <div>
+                        <p class="fs-sm text-opacity-75 text-center">blogdropper8@gmail.com</p>
                     </div>
                 </div>
                 {{-- <div class="col-md-5 col-lg-3 mb-4">
@@ -43,12 +49,6 @@
                         <p class="fs-sm text-opacity-75 text-center">I agree to receive newsletters.</p>
                     </div>
                 </div> --}}
-                <div class="col-md-5 col-lg-3 mb-4">
-                    <h5 class="text-center fs-5">For any enquiries ,</h5>
-                    <div>
-                        <p class="fs-sm text-opacity-75 text-center">blogdropper8@gmail.com</p>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
