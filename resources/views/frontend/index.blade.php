@@ -28,7 +28,7 @@
                         <h3 class="marginbot2">Featured Posts</h3>
                         @foreach ($featured_posts->take(3) as $p)
                         <div class="post-preview">
-                            <a href="{{url('blog/'.$p->id)}}">
+                            <a href="{{ url('blog/title/' . $p->slug) }}">
                                 <h2 class="post-title">{{$p->title}}</h2>
                                 <h2 class="post-subtitle">{{$p->description}}</h2>
                             </a>
@@ -72,7 +72,7 @@
                             <h3 class="mt-4 text-center">Popular Articles</h3>
                             @foreach ($posts->take(2) as $post)
                                 <div class="mb-4 mx-3 d-flex align-items-center">
-                                    <a href="{{url('/blog/'.$post->id)}}" class="d-flex">
+                                <a href="{{ url('blog/title/' . $post->slug) }}">
                                     <img class="roundimg" src="/storage/{{$post->image}}" height="100" width="100" alt="image">
                                     <div class="ms-2 px-2 d-flex flex-column justify-content-center fontsizee">
                                         <span class="mb-1 overflow-hidden noflow"> {{$post->title}} </span>

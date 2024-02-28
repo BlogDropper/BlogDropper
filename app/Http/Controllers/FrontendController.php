@@ -42,9 +42,9 @@ class FrontendController extends Controller
     }
 
     public function post($id){
-        $posts = Post::find($id);
+        $post = Post::find($id);
         $cat = Category::where('status',1)->get();
-        return view('frontend.post',compact('posts','cat'));
+        return view('frontend.post',compact('post','cat'));
     }
 
     public function showcat(Request $request, $category){
@@ -79,4 +79,11 @@ class FrontendController extends Controller
         $moreposts = Post::where('status', 1)->whereNotIn('id', $firstThreePostIds)->get();
         return view('frontend.morepops', compact('moreposts'));
     }
+
+    public function showpostslug($slug){
+        $post = Post::where('slug', $slug)->firstOrFail();
+        $cat = Category::where('status',1)->get();
+        return view('frontend.post', compact('post','cat'));
+    }
+
 }

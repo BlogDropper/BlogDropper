@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Category;
 use Illuminate\Support\Facades\Storage;
-
+use Illuminate\Support\Str;
 
 class PostController extends Controller
 {
@@ -37,6 +37,8 @@ class PostController extends Controller
         ]);
         $post = new Post;
         $post->title = $request->input('title');
+        $slug = Str::slug($post->title);
+        $post->slug = $slug;
         $post->category = $request->input('category');
         $categoryID = $request->input('category');
         $post->description = $request->input('description');
@@ -105,6 +107,8 @@ class PostController extends Controller
     public function update(Request $request,$id){
         $post = Post::find($id);
         $post->title = $request->input('title');
+        $slug = Str::slug($post->title);
+        $post->slug = $slug;
         $categoryID = $request->input('category');
         $post->description = $request->input('description');
         $post->status = $request->input('status');

@@ -4,16 +4,16 @@
 <section class="background"> <!-- Color for background-->
 
         <!-- Page Header-->
-            <div id="backgroundimage" style="background-image: url('/storage/{{$posts->banner}}');">
+            <div id="backgroundimage" style="background-image: url('/storage/{{$post->banner}}');">
                 <div class="container">
                     <div class="row justify-content-center">
                     <div class="col-md-8">
                     <div class="title">
-                        <div class="titlehead">{{$posts->title}}</div>
-                        <div class="subtitle">{{$posts->description}}</div>
+                        <div class="titlehead">{{$post->title}}</div>
+                        <div class="subtitle">{{$post->description}}</div>
                         <div class="rest">
                         <span style="font-family: cursive;">
-                            Posted by {{$posts->author}} on {{ \Carbon\Carbon::parse($posts->date)->format('d-M-Y') }}
+                            Posted by {{$post->author}} on {{ \Carbon\Carbon::parse($post->date)->format('d-M-Y') }}
                         </span>
                         </div>
                     </div>
@@ -27,11 +27,11 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-7 text-center">
-                       <p>{{$posts->introduction}}</p>
-                        <p>{{$posts->body}}</p>
+                       <p>{{$post->introduction}}</p>
+                        <p>{{$post->body}}</p>
 
                         @php
-                        $multipleImages = json_decode($posts->multipleimages);
+                        $multipleImages = json_decode($post->multipleimages);
                         @endphp
                         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3500">
                             <div class="carousel-inner">
@@ -51,7 +51,7 @@
                             </button>
                         </div>
                         <br>
-                        <p>{{$posts->conclusion}}</p>
+                        <p>{{$post->conclusion}}</p>
                     </div>
                 </div>
             </div>
@@ -70,9 +70,9 @@
                             @else
                             <h6 class="text-center text-secondary"><a href="{{route('frontend.login')}}">Login to comment</a></h6>
                             @endif
-                            @if (count($posts->comments) >=1)
+                            @if (count($post->comments) >=1)
                             <hr />
-                            @include('frontend.partials.commentDisplay', ['comments' => $posts->comments, 'post_id' => $posts->id])
+                            @include('frontend.partials.commentDisplay', ['comments' => $post->comments, 'post_id' => $post->id])
                             <hr/>
                             @if(Auth::guard('webuser')->check())
                             <h5 class="text-center text-success">Add comments</h4>
@@ -96,7 +96,7 @@
                                         </div>
                                     @endif
                                     <textarea class="form-control" name="body" rows="6" required></textarea>
-                                    <input type="hidden" name="post_id" value="{{ $posts->id }}"/>
+                                    <input type="hidden" name="post_id" value="{{ $post->id }}"/>
                                 </div>
                                 <br>
                                 <div class="form-group">

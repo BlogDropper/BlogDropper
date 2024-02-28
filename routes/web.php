@@ -64,7 +64,6 @@ Route::group(['middleware' => 'auth'], function () {
 //Frontend Section
 Route::get('/', 'App\Http\Controllers\FrontendController@index')->name('frontend.index'); //home page
 Route::get('/about', 'App\Http\Controllers\FrontendController@about')->name('frontend.about'); //about page
-Route::get('/blog/{id}','App\Http\Controllers\FrontendController@post')->name('frontend.post'); //indivisual blog page
 Route::get('/blog/category/{category}','App\Http\Controllers\FrontendController@showcat')->name('frontend.showcat'); //category page
 Route::get('/search', 'App\Http\Controllers\FrontendController@search')->name('frontend.search'); //For header Search
 
@@ -83,3 +82,5 @@ Route::post('/logoutwebuser','App\Http\Controllers\WebuserController@logout')->n
 Route::post('/commentstore','App\Http\Controllers\CommentsController@store')->middleware('webauthaccess')->name('comments.store');
 Route::post('/nestedcommentstore','App\Http\Controllers\CommentsController@nestedstore')->middleware('webauthaccess')->name('nestedcomments.store');
 Route::get('/comments/deletecommentbywebuser/{id}', 'App\Http\Controllers\CommentsController@deletecommentbywebuser')->middleware('webauthaccess')->name('deletecommentbywebuser.delete');
+
+Route::get('/blog/title/{slug}', 'App\Http\Controllers\FrontendController@showpostslug')->name('blog.showpostslug');

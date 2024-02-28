@@ -155,7 +155,7 @@
         @foreach ($posts as $p)
         <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 mt-4">
             <div class="blog-grid cardbackground">
-                <a href="{{ url('blog/' . $p->id) }}">
+                <a href="{{ url('blog/title/' . $p->slug) }}">
                 <div class="blog-grid-img"><img alt="img" class="custom-img" src="/storage/{{ $p->banner }}"></div>
                 <div class="blog-grid-text p-4">
                     <h2 class="h5 mb-3">{{$p->title}}</h2>
