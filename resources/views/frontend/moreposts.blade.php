@@ -1,19 +1,32 @@
-    @foreach ($moreposts as $p)
-        <div>
-            <a href="{{url('blog/'.$p->id)}}">
-                <h2 class="post-title">{{$p->title}}</h2>
-                <h2 class="post-subtitle">{{$p->description}}</h2>
-            </a>
-            <p>
-                <span class="mx-1"></span>
-                <span class="fas fa-user"></span>
-                <span style="font-family: cursive;">{{$p->author}}</span>
-                <span class="mx-2"></span>
-                <span class="fas fa-calendar-alt"></span>
-                <span style="font-family: cursive;">
-                {{ \Carbon\Carbon::parse($p->date)->format('d-M-Y') }}
-                </span>
-            </p>
+<div class="row">
+@foreach ($moreposts as $p)
+    <div class="col-sm-6" data-aos="slide-up">
+        <a href="{{ url('blog/title/' . $p->slug) }}">
+        <div class="blog-grid">
+            <div class="blog-img">
+                <div class="date">
+                    <span>{{ \Carbon\Carbon::parse($p->date)->format('d') }}</span>
+                    <label>{{ \Carbon\Carbon::parse($p->date)->format('M') }}</label>
+                </div>
+                    <img src="{{ asset('storage/' . $p->banner) }}" class="fixed-image" alt="{{ $p->title }}">
+            </div>
+            <div class="blog-info">
+                <h5>{{ $p->title }}</h5>
+                <p>{{ $p->description }}</p>
+                <br>
+                <p style="display: flex; align-items: center;">
+                    <span style="font-family: cursive; margin-right: 10px;">
+                        <i class="fas fa-user"></i> {{$p->author}}
+                    </span>
+                    <span>
+                        @foreach ($p->categories as $category)
+                            <i class="fas fa-coffee"></i> {{ $category->name }}
+                        @endforeach
+                    </span>
+                </p>
+            </div>
         </div>
-        <hr class="my-4"/>
-    @endforeach
+        </a>
+    </div>
+@endforeach
+</div>

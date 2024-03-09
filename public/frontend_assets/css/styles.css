@@ -2,7 +2,68 @@ a {
     text-decoration: none; /* Remove underline */
     color: #36454F; /* Use the default text color */
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    transition: color 1.05s, font-weight 0.125s;
+    transition: color 1.05s, font-size 0.125s;
+}
+a:hover{
+    color: #696969;
+    font-size: 15px;
+}
+
+.logo:hover{
+    font-size: 22px;
+}
+
+/* For Index photo */
+.headphoto{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.backimg{
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.wave{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+}
+
+.text-phrase{
+    padding-top: 150px;
+    text-align: center;
+    margin: 0 1rem;
+}
+
+.textindex{
+    font-size: xx-large;
+    color: #f0f0f0;
+}
+
+@media (max-width: 768px) {
+    .backimg {
+        height: 50vh; /* Adjust as needed */
+    }
+
+    .text-phrase {
+        padding-top: 100px; /* Adjust as needed */
+    }
+
+    .textindex {
+        font-size: large; /* Adjust as needed */
+    }
+
+    .textc{
+        margin: 0;
+        text-align: center;
+        color: #343434;
+    }
 }
 
 @media(max-width:700px){
@@ -11,27 +72,43 @@ a {
     }
 }
 
-a:hover{
-    color: #696969;
-    font-weight: bolder;
+.fixed-image {
+    width: 100%; /* Adjust the width as per your requirement */
+    height: 12rem; /* Adjust the height as per your requirement */
+    object-fit: fill; /* Maintain aspect ratio and cover the entire space */
+    filter: brightness(90%); /* Adjust the brightness percentage to make the image darker */
+    z-index: 0;
+    transition: transform 0.3s ease; /* Add a transition for smooth hover effect */
+}
+a:hover .fixed-image{
+transform: scale(1.05); /* Scale the image on hover */
+}
+
+.aboutimg{
+    width: 100%; /* Adjust the width as per your requirement */
+    height: 100%; /* Adjust the height as per your requirement */
+    object-fit: fill; /* Maintain aspect ratio and cover the entire space */
+    filter: brightness(90%); /* Adjust the brightness percentage to make the image darker */
+    z-index: 0;
+    transition: transform 0.3s ease; /* Add a transition for smooth hover effect */
+}
+
+.aboutimg:hover{
+    transform: scale(1.05); /* Scale the image on hover */
 }
 
 .background{
     background-image:
      linear-gradient(
-            to bottom, #F0F0F0, #E0E0E0
+            to bottom,#F0F0F0, #f8f8ff, #E0E0E0
         );
 }
 
 h3{
-    margin: 2rem 0rem;
+    margin: 1rem 0rem;
     font-size: x-large;
     font-weight: bold;
     color: #36454F;
-}
-
-.marginbot2{
-    margin-bottom: 1.5rem;
 }
 
 .post-title{
@@ -61,13 +138,15 @@ section{
     );
 }
 
-.row{
-    margin-right: 0px;
+.roundimg{
+    border: #f0f0f0 2px solid;
+    border-radius: 50%;
+    filter: brightness(90%); /* Adjust the percentage to change the darkness */
+    transition: transform 0.3s ease; /* Add a transition for smooth hover effect */
 }
 
-.roundimg{
-    border-radius: 50%;
-    filter: brightness(92%); /* Adjust the percentage to change the darkness */
+a:hover .roundimg{
+    transform: scale(1.05); /* Scale the image on hover */
 }
 
 .custom-card {
@@ -78,8 +157,12 @@ section{
 .custom-card-img {
     height: 16.5rem; /* Set the desired height */
     object-fit: fill;
-    filter: brightness(92%); /* Adjust the percentage to change the darkness */
+    filter: brightness(90%); /* Adjust the percentage to change the darkness */
+    transition: transform 0.3s ease; /* Add a transition for smooth hover effect */
+}
 
+a:hover .custom-card-img{
+    transform: scale(1.05); /* Scale the image on hover */
 }
 
 .custom-img{
@@ -191,21 +274,25 @@ section{
 }
 
 .showmorebutton{
-  background:#f8f8ff;
-  padding: 0.75rem;
+  background: #ffffff;
+  border:#f0f0f0 2px solid ;
+  padding: 1.25rem;
   color: #696969;
   cursor: pointer;
   transition: padding 1s, border-color 1s;
 }
 
 .showmorebutton:hover{
-    color: #343434;
+    color: #36454F;
+    background: #f0f0f0;
+    border:#ffffff 2.5px solid ;
 }
 
 .catbackground{
         background-image: linear-gradient(
-            to bottom right, #f8f8ff, #F0F0F0
+            to top, #f8f8ff, #ffffff 20%
         );
+        background-color: #EBE3D5 ;
 }
 
 .cardbackground{
@@ -219,7 +306,7 @@ footer {
     padding-bottom: 3rem;
     background-image: linear-gradient(
             to bottom, #E0E0E0, #FFFFFF
-        );
+    );
 }
 
   @media (max-width: 1200px) { /* Adjust the max-width value as needed */
@@ -233,7 +320,7 @@ footer {
 
   @media(max-width: 480px){
     .showmorebutton{
-        padding: 1rem;
+        padding: 1.5rem;
       }
   }
 
@@ -243,56 +330,46 @@ footer {
     }
   }
 
-  header.masthead {
-    position: relative;
-    /* margin-bottom: 3rem; */
-    padding-top: calc(8rem + 57px);
-    padding-bottom: 8rem;
-    background: no-repeat center center;
-    background-color: #6c757d;
-    background-size: cover;
-    background-attachment: scroll;
-  }
-
-  header.masthead::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.3); /* Adjust the transparency (0.5 here) to your liking */
-    z-index: 1; /* Adjust the z-index if needed */
+    .text-c{
+        text-decoration: none; /* Remove underline */
+        color: #36454F; /* Use the default text color */
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        transition: color 1.05s, font-weight 0.125s;
     }
 
-  header.masthead .page-heading,
-  header.masthead .site-heading {
-    text-align: center;
-    color: #f8f8ff;
-    font-size: 1rem;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    position: relative; /* Ensures headings appear above the overlay */
-    z-index: 2; /* Higher z-index to place headings above the overlay */
-  }
+    .bubble {
+        background-color: #E0E0E0;
+        padding: 2rem 1rem 0rem 1rem;
+        margin-top: 40px;
+        border-radius: 50% 50% 0 0;
+        position: relative;
+        overflow: hidden;
+    }
 
-  header.masthead .post-heading .subheading {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin: 0.75rem 0 2rem;
-    font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  }
+    .bubble::after {
+        content: '';
+        position: absolute;
+        bottom: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 200%;
+        height: 100px;
+        background-color: #E0E0E0;
+        border-radius: 50%;
+        z-index: -1;
+    }
 
-   @media (min-width: 992px) {
-     header.masthead {
-       padding-bottom: 12rem;
-     }
-   }
+    .innerbubble{
+        padding-top: 100px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 
-   @media (max-width: 768px) {
-     header.masthead {
-       padding-top: 7rem; /* Adjust the value as needed */
-     }
-   }
+    @media (max-width: 768px) {
+        .innerbubble{
+            padding-top: 40px;
+        }
+    }
 
     #backgroundimage {
     width: 100%;

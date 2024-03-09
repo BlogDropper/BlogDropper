@@ -3,7 +3,7 @@
 @section('body')
 <section class="background">
 <div class="container py-0">
-    <div class="row align-items-center">
+    <div class="row align-items-center" data-aos="slide-up">
         <div class="col-lg-6 col-md-6 col-12">
             <div class="ml-lg-5 mx-3" style="color: #696969">
                 <h3 class="font-weight-normal mb-3">About Us</h3>
@@ -53,7 +53,8 @@
                     <div class="row">
                         <div class="col-lg-12 col-md-12 mt-4 pt-2">
                             <div class="card work-desk rounded border-0 shadow-lg overflow-hidden">
-                                <img src="{{ asset('frontend_assets/assets/img/martin.jpg') }}" class="img-fluid" alt="Image description" />                                <div class="img-overlay bg-dark"></div>
+                                <img src="{{ asset('frontend_assets/assets/img/martin.jpg') }}" class="img-fluid aboutimg" alt="Image description" />
+                                <div class="img-overlay bg-dark"></div>
                             </div>
                         </div>
                         <!--end col-->
@@ -66,7 +67,7 @@
                     <div class="row">
                         <div class="col-lg-12 col-md-12">
                             <div class="card work-desk rounded border-0 shadow-lg overflow-hidden">
-                                <img src="{{ asset('frontend_assets/assets/img/sunny.jpg') }}" class="img-fluid" alt="Image description" />                                <div class="img-overlay bg-dark"></div>
+                                <img src="{{ asset('frontend_assets/assets/img/sunny.jpg') }}" class="img-fluid aboutimg" alt="Image description" />                                <div class="img-overlay bg-dark"></div>
                                 <div class="img-overlay bg-dark"></div>
                             </div>
                         </div>
@@ -74,7 +75,7 @@
 
                         <div class="col-lg-12 col-md-12 mt-4 pt-2">
                             <div class="card work-desk rounded border-0 shadow-lg overflow-hidden">
-                                <img src="{{ asset('frontend_assets/assets/img/band.jpg') }}" class="img-fluid" alt="Image description" />                                <div class="img-overlay bg-dark"></div>
+                                <img src="{{ asset('frontend_assets/assets/img/band.jpg') }}" class="img-fluid aboutimg" alt="Image description" />                                <div class="img-overlay bg-dark"></div>
                                 <div class="img-overlay bg-dark"></div>
                             </div>
                         </div>

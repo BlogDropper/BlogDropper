@@ -66,7 +66,7 @@ class FrontendController extends Controller
 
     public function showmoreposts() {
         //we use ajax call to show a list of posts excluding the first three posts
-        $firstThreePostIds = Post::where('featured', 1)->take(3)->pluck('id')->toArray();
+        $firstThreePostIds = Post::where('featured', 1)->take(4)->pluck('id')->toArray();
         // Fetch the featured posts excluding the first 3 posts
         $moreposts = Post::where('featured', 1)->whereNotIn('id', $firstThreePostIds)->get();
         return view('frontend.moreposts', compact('moreposts'));
@@ -74,7 +74,7 @@ class FrontendController extends Controller
 
     public function showmorepops() {
         //we use ajax call to show a list of posts excluding the first three posts
-        $firstThreePostIds = Post::where('status', 1)->orderByDesc('updated_at')->take(2)->pluck('id')->toArray();
+        $firstThreePostIds = Post::where('status', 1)->orderByDesc('updated_at')->take(4)->pluck('id')->toArray();
         // Fetch the featured posts excluding the first 3 posts
         $moreposts = Post::where('status', 1)->whereNotIn('id', $firstThreePostIds)->get();
         return view('frontend.morepops', compact('moreposts'));
