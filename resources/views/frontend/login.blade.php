@@ -47,11 +47,16 @@
                     </div>
 
                   </form>
-
-                    {{-- <a class="small text-muted" href="#!">Forgot password?</a> --}}
-                    <p class="mb-2 pb-lg-2">Don't have an account?
-                    </p>
-                        <a href="{{route('frontend.signup')}}" style="color: #393f81;">Register here</a>
+                  <hr>
+                  <p>
+                    <a href="{{ route('google-auth') }}">
+                        <button class="btn btn-secondary btn-lg">
+                            <i class="fab fa-google fa-fw"></i>
+                            Continue with Google
+                        </button>
+                    </a>
+                  </p>
+                    <p class="mb-2 pb-lg-2">Don't have an account? <a href="{{ route('frontend.signup') }}" style="color: #393f81;">Register here</a></p>
                 </div>
               </div>
             </div>

@@ -11,6 +11,7 @@
         "laravel-frontend-presets/argon": "1.1.2.",
         "laravel/framework": "^9.0",
         "laravel/sanctum": "^2.14",
+        "laravel/socialite": "^5.12",
         "laravel/tinker": "^2.7",
         "laravel/ui": "^4.2"
     },

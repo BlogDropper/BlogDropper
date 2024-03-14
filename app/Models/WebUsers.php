@@ -21,5 +21,6 @@ class WebUsers extends Authenticatable
         'name',
         'email',
         'password',
+        'googleid'
     ];
 }

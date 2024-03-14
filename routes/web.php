@@ -84,3 +84,7 @@ Route::post('/nestedcommentstore','App\Http\Controllers\CommentsController@neste
 Route::get('/comments/deletecommentbywebuser/{id}', 'App\Http\Controllers\CommentsController@deletecommentbywebuser')->middleware('webauthaccess')->name('deletecommentbywebuser.delete');
 
 Route::get('/blog/title/{slug}', 'App\Http\Controllers\FrontendController@showpostslug')->name('blog.showpostslug');
+
+//For Google Auth
+Route::get('/auth/google', 'App\Http\Controllers\GoogleAuthController@redirect')->name('google-auth');
+Route::get('/auth/google/callback', 'App\Http\Controllers\GoogleAuthController@callbackGoogle')->name('callbackgoogle');
